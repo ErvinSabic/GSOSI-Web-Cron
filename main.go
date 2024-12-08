@@ -18,11 +18,8 @@ import (
 
 
 var (
-    erpKey                 string
     errorLog               string
     commandLog             string
-    trackingUpdateInterval string
-    eiaUpdateIntervalDays  string
     client                 = &http.Client{}
 	debugMode			   bool
 	warmUp				   bool

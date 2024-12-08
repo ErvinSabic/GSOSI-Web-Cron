@@ -7,7 +7,7 @@ The point of this is to allow for poling requests without having to depend on a 
 ## Building
 Simply run `go build` within the project directory. This should compile a binary for you to use. 
 
-## Example .env file configuration**
+## Example .env file configuration
 At the minimum you need these. It's worth noting that variables from your .env file can be called in your `triggers.json` configuration.
 
 .env
