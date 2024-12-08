@@ -1006,3 +1006,74 @@ _______________________________________
 2024/12/08 16:30:33 Successfully processed trigger: asset_position_update
 2024/12/08 16:30:33 Attempting to process trigger: useia_fuel_price_update REQUEST TYPE: GET ON: http://localhost:8000//events/weeklyEIADieselPrices
 2024/12/08 16:30:33 Successfully processed trigger: useia_fuel_price_update
+2024/12/08 16:35:01 _______________________________________ 
+[33mDebug Mode Enabled
+Environment Variables Gathered from .env 
+[0m_______________________________________ 
+ERP_KEY: Dwuj334Na2JMu61QBsQzj3KBd4uKuVZs-internal
+ERROR_LOG: ./var/log/error.log
+COMMAND_LOG: ./var/log/command.log
+TRACKING_UPDATE_INTERVAL: 1
+EIA_UPDATE_INTERVAL_DAYS: 8
+SERVER_PORT: 3333
+END_POINT: http://localhost:8000/
+
+2024/12/08 16:35:01 _______________________________________ 
+[33mTrigger Info 
+[0mName: asset_position_update
+Endpoint: ENV('END_POINT')
+Method: GET
+Route: /events/eRoadLocationUpdates
+Duration: 1m
+Additional Headers: 
+_______________________________________ 
+
+2024/12/08 16:35:01 _______________________________________ 
+[33mTrigger Info 
+[0mName: useia_fuel_price_update
+Endpoint: ENV('END_POINT')
+Method: GET
+Route: /events/weeklyEIADieselPrices
+Duration: 128h
+Additional Headers: 
+Key: Authorization Value: ENV('AUTH_TOKEN')
+_______________________________________ 
+
+2024/12/08 16:35:01 Attempting to process trigger: asset_position_update REQUEST TYPE: GET ON: http://localhost:8000//events/eRoadLocationUpdates
+2024/12/08 16:35:01 Successfully processed trigger: asset_position_update
+2024/12/08 16:35:01 Attempting to process trigger: useia_fuel_price_update REQUEST TYPE: GET ON: http://localhost:8000//events/weeklyEIADieselPrices
+2024/12/08 16:35:01 Successfully processed trigger: useia_fuel_price_update
+2024/12/08 16:38:23 _______________________________________ 
+[33mDebug Mode Enabled
+Environment Variables Gathered from .env 
+[0m_______________________________________ 
+ERP_KEY: Dwuj334Na2JMu61QBsQzj3KBd4uKuVZs-internal
+ERROR_LOG: ./var/log/error.log
+COMMAND_LOG: ./var/log/command.log
+END_POINT: http://localhost:8000/
+
+2024/12/08 16:38:23 _______________________________________ 
+[33mTrigger Info 
+[0mName: asset_position_update
+Endpoint: ENV('END_POINT')
+Method: GET
+Route: /events/eRoadLocationUpdates
+Duration: 1m
+Additional Headers: 
+_______________________________________ 
+
+2024/12/08 16:38:23 _______________________________________ 
+[33mTrigger Info 
+[0mName: useia_fuel_price_update
+Endpoint: ENV('END_POINT')
+Method: GET
+Route: /events/weeklyEIADieselPrices
+Duration: 128h
+Additional Headers: 
+Key: Authorization Value: ENV('AUTH_TOKEN')
+_______________________________________ 
+
+2024/12/08 16:38:23 Attempting to process trigger: asset_position_update REQUEST TYPE: GET ON: http://localhost:8000//events/eRoadLocationUpdates
+2024/12/08 16:38:23 Successfully processed trigger: asset_position_update
+2024/12/08 16:38:23 Attempting to process trigger: useia_fuel_price_update REQUEST TYPE: GET ON: http://localhost:8000//events/weeklyEIADieselPrices
+2024/12/08 16:38:23 Successfully processed trigger: useia_fuel_price_update

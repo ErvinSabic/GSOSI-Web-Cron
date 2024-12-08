@@ -14,7 +14,7 @@
 		"duration":"128h",
 		"additional_headers":[{
 			"key":"Authorization",
-			"value":"ENV('ERP_KEY')"
+			"value":"ENV('AUTH_TOKEN')"
 		}]	
 	}
 ]
