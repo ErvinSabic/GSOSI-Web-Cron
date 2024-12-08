@@ -1,12 +1,14 @@
-package main 
+package main
 
 import (
 	"net/http"
+	"flag"
 	"bytes"
 	"time"
 	"strconv"
 	"os"
 	"log"
+	"errors"
     "github.com/joho/godotenv"
 )
 
@@ -25,24 +27,39 @@ var (
     trackingUpdateInterval int
     eiaUpdateIntervalDays  int
     client                 = &http.Client{}
+	debugMode			   bool
 )
 
+const (
+	redColor    = "\033[31m"
+	yellowColor = "\033[33m"
+	resetColor  = "\033[0m"
+)
+
+
 func init() {
+	flag.BoolVar(&debugMode, "debugMode", false, "Enable Debug Mode");
+	flag.Parse();
+
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
 
 	serverPort = os.Getenv("SERVER_PORT");
-	endPoint = os.Getenv("ENDPOINT");
+	endPoint = os.Getenv("END_POINT");
 	erpKey = os.Getenv("ERP_KEY");
 	errorLog = os.Getenv("ERROR_LOG");
 	commandLog = os.Getenv("COMMAND_LOG");
     trackingUpdateInterval, _ = strconv.Atoi(os.Getenv("TRACKING_UPDATE_INTERVAL"));
     eiaUpdateIntervalDays, _ = strconv.Atoi(os.Getenv("EIA_UPDATE_INTERVAL_DAYS"));
 
+	if debugMode {
+		outputDebugInfo();
+	}
+
 	if(eiaUpdateIntervalDays > 102200 || trackingUpdateInterval > 102200){
-		logText("ERROR: EIA Update Interval or tracking update interval is too large. Please set it to a reasonable value.", true);
+		logText("ERROR: EIA Update Interval or tracking update interval is too large. Please set it to a reasonable value.", errors.New("Invalid Interval"));
 		panic("ERROR: EIA Update Interval or tracking update interval is too large. Please set it to a reasonable value.");
 	}
 }
@@ -50,6 +67,8 @@ func init() {
 func main() {
 	triggerLocationUpdates();
 	triggerEIAFuelPrices();
+
+	select {};
 }
 
 
@@ -65,7 +84,7 @@ func main() {
 * the ERoad ELD Integration built into the Symfony API. 
 */
 func triggerLocationUpdates(){
-	logText("Attempting to process ERoad location updates....", false);
+	logText("Attempting to process ERoad location updates....", nil);
 	// Create an empty request.
 	body := []byte(`{}`);
 
@@ -76,10 +95,9 @@ func triggerLocationUpdates(){
 	response, err := client.Do(request);
 
 	if(err != nil){
-		logText("There was an error gathering location updates.", true);
-		panic(err)
+		logText("There was an error gathering location updates.", err);
 	}else {
-		logText("Location updates were successful. \nNext update in "+strconv.Itoa(trackingUpdateInterval)+" minutes...", false);
+		logText("Location updates were successful. \nNext update in "+strconv.Itoa(trackingUpdateInterval)+" minutes...", nil);
 		defer response.Body.Close();
 		time.AfterFunc(time.Duration(trackingUpdateInterval) * time.Minute, triggerLocationUpdates);
 	}
@@ -87,10 +105,10 @@ func triggerLocationUpdates(){
 
 /**
 * This function is used to trigger updates for fuel market price
-* averages from the EIA. (https://www.eia.gov/). It is updated every monday.
+* averages from the EIA. (https://www.eia.gov/). It is updated every 8 days.
 */
 func triggerEIAFuelPrices(){
-	logText("Attempting to process EIA fuel market price updates....", false);
+	logText("Attempting to process EIA fuel market price updates....", nil);
 	// Empty body request
 	body := []byte(`{}`);
 
@@ -99,39 +117,11 @@ func triggerEIAFuelPrices(){
 
 	response, err := client.Do(request);
 
-
 	if(err != nil){
-		logText("There was an error gathering new fuel prices", true);
-		panic(err)
+		logText("There was an error gathering new fuel prices", err);
 	}else {
-		logText("Fuel Updates were successful. \nNext update in "+strconv.Itoa(eiaUpdateIntervalDays)+" days...", false);
+		logText("Fuel Updates were successful. \nNext update in "+strconv.Itoa(eiaUpdateIntervalDays)+" days...", nil);
 		defer response.Body.Close();
 		time.AfterFunc((time.Duration(eiaUpdateIntervalDays)*24*time.Hour), triggerEIAFuelPrices);
 	}
-}
-
-/******************************************************************************************
-* 
-*	Utility Methods 
-*
-*******************************************************************************************/
-
-func logText(sToLog string, isError bool) bool{
-    var logFile string
-    if isError {
-        logFile = errorLog
-    } else {
-        logFile = commandLog
-    }
-
-    file, err := os.OpenFile(logFile, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
-    if err != nil {
-        log.Printf("ERROR: Could not write to log file: %v", err)
-        return false
-    }
-    defer file.Close()
-
-    logger := log.New(file, "", log.LstdFlags)
-    logger.Println(sToLog)
-    return true
 }

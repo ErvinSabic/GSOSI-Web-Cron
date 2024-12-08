@@ -1,2 +1,41 @@
 2024/12/07 19:03:43 ERROR: EIA Update Interval is too large. Please set it to a reasonable value.
 2024/12/07 19:05:17 There was an error gathering location updates.
+2024/12/07 19:07:00 There was an error gathering location updates.
+2024/12/07 19:07:19 There was an error gathering location updates.
+2024/12/07 19:07:19 There was an error gathering new fuel prices
+2024/12/07 19:09:58 There was an error gathering location updates.
+2024/12/07 19:09:58 There was an error gathering new fuel prices
+2024/12/07 19:15:42 There was an error gathering location updates.
+2024/12/07 19:15:42 There was an error gathering new fuel prices
+2024/12/07 19:16:00 There was an error gathering location updates.
+2024/12/07 19:16:00 There was an error gathering new fuel prices
+2024/12/07 19:16:29 There was an error gathering location updates.
+2024/12/07 19:16:29 There was an error gathering new fuel prices
+2024/12/07 19:26:27 There was an error gathering location updates.
+2024/12/07 19:26:27 There was an error gathering new fuel prices
+2024/12/07 19:27:29 There was an error gathering location updates.
+2024/12/07 19:27:29 There was an error gathering new fuel prices
+2024/12/07 19:29:48 There was an error gathering location updates.
+2024/12/07 19:29:48 There was an error gathering new fuel prices
+2024/12/07 19:34:09 There was an error gathering location updates.
+2024/12/07 19:34:09 There was an error gathering new fuel prices
+2024/12/07 19:36:43 There was an error gathering location updates.
+2024/12/07 19:36:43 There was an error gathering new fuel prices
+2024/12/07 19:37:35 There was an error gathering location updates.
+2024/12/07 19:37:35 There was an error gathering new fuel prices
+2024/12/07 19:40:41 There was an error gathering location updates.
+2024/12/07 19:40:41 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/07 19:40:41 There was an error gathering new fuel prices
+2024/12/07 19:40:41 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/07 19:55:06 There was an error gathering location updates.
+2024/12/07 19:55:06 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/07 19:55:06 There was an error gathering new fuel prices
+2024/12/07 19:55:06 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/07 19:55:27 There was an error gathering location updates.
+2024/12/07 19:55:27 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/07 19:55:27 There was an error gathering new fuel prices
+2024/12/07 19:55:27 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/07 19:55:37 There was an error gathering location updates.
+2024/12/07 19:55:37 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/07 19:55:37 There was an error gathering new fuel prices
+2024/12/07 19:55:37 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused
