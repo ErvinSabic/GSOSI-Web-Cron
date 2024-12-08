@@ -18,8 +18,6 @@ TRACKING_UPDATE_INTERVAL="5"
 EIA_UPDATE_INTERVAL_DAYS="8"
 ```
 
-`SERVER_PORT` - The port that will be used by the Sync Server. **Not yet implemented** however it will accept connections in the future via web sockets. 
-
 `END_POINT` - The endpoint where the requests that are within the script will be sent.
 
 `ERP_KEY` - The key that will be added in the request's authorization header. 
@@ -35,6 +33,8 @@ EIA_UPDATE_INTERVAL_DAYS="8"
 `EIA_UPDATE_INTERVAL_DAYS` - Currently used to trigger EIA Fuel price updates every 8 days, in this example. 
 
 `END_POINT` - The endpoint where the requests that are within the script will be sent. In the future we will simply define URLS. 
+
+`SERVER_PORT` - The port that will be used by the Sync Server. **Not yet implemented** however it will accept connections in the future via web sockets. 
 
 ## Flags
 | Flag | Type | Values | Description |

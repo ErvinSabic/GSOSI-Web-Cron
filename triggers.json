@@ -1,7 +1,7 @@
 [
 	{
 		"name":"asset_position_update",
-		"endpoint":"http://localhost:8000",
+		"endpoint":"ENV('END_POINT')",
 		"method":"GET",
 		"route":"/events/eRoadLocationUpdates",
 		"duration":"1m",
@@ -12,7 +12,7 @@
 	}, 
 	{
 		"name":"useia_fuel_price_update",
-		"endpoint":"http://localhost:8000",
+		"endpoint":"ENV('END_POINT')",
 		"method":"GET",
 		"route":"/events/weeklyEIADieselPrices",
 		"duration":"128h",

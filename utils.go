@@ -3,6 +3,8 @@ package main
 import (
 	"log"
 	"os"
+    "github.com/joho/godotenv"
+
 //	"strconv"
 )
 /******************************************************************************************
@@ -15,21 +17,48 @@ import (
 * This function is used to output debug information to the console and log file.
 * When the --debugMode=true flag is set.
 */
-func outputDebugInfo(){
+func outputEnvInfo(){
 	debugInfo := 
 		"_______________________________________ \n" +
 		yellowColor+"Debug Mode Enabled\n" +
 		"Environment Variables Gathered from .env \n" +resetColor+
-		"_______________________________________ \n" +
-		"Server Port: " + serverPort + "\n" +
-		"End Point: " + endPoint + "\n" +
-		"ERP Key: " + erpKey + "\n" +
-		"Error Log: " + errorLog + "\n" +
-		"Command Log: " + commandLog + "\n" +
-		"Tracking Update Interval: " + trackingUpdateInterval + "\n" +
-		"EIA Update Interval: " + eiaUpdateIntervalDays + "\n" +
-		"________________________________________\n";
+		"_______________________________________ \n";
+    
+    // Read the .env file. This will return a map of key value pairs.
+    envVars, err := godotenv.Read(".env");
+    if(err != nil){
+        logText("There was an error reading the .env file", err);
+        return
+    }
+    // Append every key value pair within the .env file. 
+    for key, value := range envVars {
+        debugInfo += key + ": " + value + "\n";
+    }
+
+    // Output to logger.
 	logText(debugInfo, nil);	
+}
+
+/**
+* This function will output the value of the triggers slice to the console and log file.
+*/
+func outputTriggers(triggers []Trigger){
+    for _, trigger := range triggers {
+        triggerInfo := 
+            "_______________________________________ \n" +
+            yellowColor+"Trigger Info \n" + resetColor +
+            "Name: " + trigger.Name + "\n" +
+            "Endpoint: " + trigger.Endpoint + "\n" +
+            "Method: " + trigger.Method + "\n" +
+            "Route: " + trigger.Route + "\n" +
+            "Duration: " + trigger.Duration + "\n" +
+            "Additional Headers: \n";
+        for _, header := range trigger.AdditionalHeaders {
+            triggerInfo += "Key: " + header.Key + " Value: " + header.Value + "\n";
+        }
+        triggerInfo += "_______________________________________ \n";
+        logText(triggerInfo, nil);
+    }
 }
 
 /**

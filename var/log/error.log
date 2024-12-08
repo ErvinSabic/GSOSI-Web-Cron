@@ -75,3 +75,29 @@
 2024/12/08 03:21:30 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
 2024/12/08 03:21:30 There was an error gathering new fuel prices
 2024/12/08 03:21:30 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 12:42:05 There was an error gathering location updates.
+2024/12/08 12:42:05 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 12:42:05 There was an error gathering new fuel prices
+2024/12/08 12:42:05 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 12:43:16 There was an error gathering location updates.
+2024/12/08 12:43:16 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 12:43:16 There was an error gathering new fuel prices
+2024/12/08 12:43:16 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 14:17:56 There was an error gathering location updates.
+2024/12/08 14:17:56 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 14:17:56 There was an error gathering new fuel prices
+2024/12/08 14:17:56 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 14:18:13 There was an error gathering location updates.
+2024/12/08 14:18:13 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 14:18:13 There was an error gathering new fuel prices
+2024/12/08 14:18:13 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 14:18:42 There was an error gathering location updates.
+2024/12/08 14:18:42 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 14:18:42 There was an error gathering new fuel prices
+2024/12/08 14:18:42 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 14:21:31 There was an error gathering location updates.
+2024/12/08 14:21:31 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 14:21:31 There was an error gathering new fuel prices
+2024/12/08 14:21:31 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 16:04:30 There was an error processing trigger: asset_position_update
+2024/12/08 16:04:30 Get /events/eRoadLocationUpdates: unsupported protocol scheme ""
