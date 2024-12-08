@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"encoding/json"
 	"flag"
 	"bytes"
 	"time"
@@ -28,6 +29,7 @@ var (
     eiaUpdateIntervalDays  string
     client                 = &http.Client{}
 	debugMode			   bool
+	triggers			   []byte
 )
 
 const (
@@ -35,7 +37,6 @@ const (
 	yellowColor = "\033[33m"
 	resetColor  = "\033[0m"
 )
-
 
 func init() {
 	flag.BoolVar(&debugMode, "debugMode", false, "Enable Debug Mode");
@@ -54,6 +55,16 @@ func init() {
     trackingUpdateInterval = os.Getenv("TRACKING_UPDATE_INTERVAL");
     eiaUpdateIntervalDays = os.Getenv("EIA_UPDATE_INTERVAL_DAYS");
 
+	tFile, tErr := os.OpenFile("triggers.json", os.O_RDONLY, 0444);
+	if tErr != nil {
+		panic(tErr);
+	}
+	decoder := json.NewDecoder(tFile)
+	token, dErr := decoder.Token();
+	if(dErr != nil){
+		panic(dErr);
+	}
+	print(token);
 	if debugMode {
 		outputDebugInfo();
 	}
@@ -73,6 +84,9 @@ func main() {
 *
 *******************************************************************************************/
 
+func processTrigger(triggerName string){
+
+}
 
 /**
 * This function is used to trigger location updates for 
