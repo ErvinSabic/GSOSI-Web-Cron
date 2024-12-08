@@ -59,3 +59,11 @@
 2024/12/08 01:13:32 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
 2024/12/08 01:13:32 There was an error gathering new fuel prices
 2024/12/08 01:13:32 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 01:23:11 There was an error gathering location updates.
+2024/12/08 01:23:11 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 01:23:11 There was an error gathering new fuel prices
+2024/12/08 01:23:11 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 01:27:23 There was an error gathering location updates.
+2024/12/08 01:27:23 Get http://localhost:8000/events/eRoadLocationUpdates: dial tcp 127.0.0.1:8000: connect: connection refused
+2024/12/08 01:27:23 There was an error gathering new fuel prices
+2024/12/08 01:27:23 Get http://localhost:8000/events/weeklyEIADieselPrices: dial tcp 127.0.0.1:8000: connect: connection refused

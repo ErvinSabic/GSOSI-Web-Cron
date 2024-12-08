@@ -183,3 +183,55 @@ ________________________________________
 
 2024/12/08 01:13:32 Attempting to process ERoad location updates....
 2024/12/08 01:13:32 Attempting to process EIA fuel market price updates....
+2024/12/08 01:23:11 _______________________________________ 
+[33mDebug Mode Enabled
+Environment Variables Gathered from .env 
+[0m_______________________________________ 
+Server Port: 3333
+End Point: http://localhost:8000/
+ERP Key: Dwuj334Na2JMu61QBsQzj3KBd4uKuVZs-internal
+Error Log: ./var/log/error.log
+Command Log: ./var/log/command.log
+Tracking Update Interval: 1
+EIA Update Interval: 8
+________________________________________
+
+2024/12/08 01:23:11 Attempting to process ERoad location updates....
+2024/12/08 01:23:11 Attempting to process EIA fuel market price updates....
+2024/12/08 01:27:23 _______________________________________ 
+[33mDebug Mode Enabled
+Environment Variables Gathered from .env 
+[0m_______________________________________ 
+Server Port: 3333
+End Point: http://localhost:8000/
+ERP Key: Dwuj334Na2JMu61QBsQzj3KBd4uKuVZs-internal
+Error Log: ./var/log/error.log
+Command Log: ./var/log/command.log
+Tracking Update Interval: 1
+EIA Update Interval: 8
+________________________________________
+
+2024/12/08 01:27:23 Attempting to process ERoad location updates....
+2024/12/08 01:27:23 Attempting to process EIA fuel market price updates....
+2024/12/08 01:30:18 _______________________________________ 
+[33mDebug Mode Enabled
+Environment Variables Gathered from .env 
+[0m_______________________________________ 
+Server Port: 3333
+End Point: http://localhost:8000/
+ERP Key: Dwuj334Na2JMu61QBsQzj3KBd4uKuVZs-internal
+Error Log: ./var/log/error.log
+Command Log: ./var/log/command.log
+Tracking Update Interval: 1
+EIA Update Interval: 8
+________________________________________
+
+2024/12/08 01:30:18 Attempting to process ERoad location updates....
+2024/12/08 01:30:19 Location updates were successful. 
+Next update in 1 minutes...
+2024/12/08 01:30:19 Attempting to process EIA fuel market price updates....
+2024/12/08 01:30:21 Fuel Updates were successful. 
+Next update in 8 days...
+2024/12/08 01:31:19 Attempting to process ERoad location updates....
+2024/12/08 01:31:20 Location updates were successful. 
+Next update in 1 minutes...
