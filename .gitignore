@@ -1,0 +1,4 @@
+.env
+var/log/*.log
+triggers.json
+SyncServer
