@@ -1,9 +1,11 @@
-# Valiant Sync Server
+# GS Sync Server
 
 This is a server written in Golang to handle the scheduling of certain calls to an endpoint defined in the `triggers.json` configuration.
 
 The point of this is to allow for poling requests without having to depend on a cron job that may vanish during an infrastructure change. The only thing that would need to be done is running the SyncServer like a Daemon and well... Go!
 
+## Building
+Simply run `go build` within the project directory. This should compile a binary for you to use. 
 
 ## Example .env file configuration**
 At the minimum you need these. It's worth noting that variables from your .env file can be called in your `triggers.json` configuration.
