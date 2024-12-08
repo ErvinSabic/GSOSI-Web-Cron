@@ -1077,3 +1077,4 @@ _______________________________________
 2024/12/08 16:38:23 Successfully processed trigger: asset_position_update
 2024/12/08 16:38:23 Attempting to process trigger: useia_fuel_price_update REQUEST TYPE: GET ON: http://localhost:8000//events/weeklyEIADieselPrices
 2024/12/08 16:38:23 Successfully processed trigger: useia_fuel_price_update
+
