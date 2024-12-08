@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"os"
-	"strconv"
+//	"strconv"
 )
 /******************************************************************************************
 * 
@@ -26,8 +26,8 @@ func outputDebugInfo(){
 		"ERP Key: " + erpKey + "\n" +
 		"Error Log: " + errorLog + "\n" +
 		"Command Log: " + commandLog + "\n" +
-		"Tracking Update Interval: " + strconv.Itoa(trackingUpdateInterval) + "\n" +
-		"EIA Update Interval: " + strconv.Itoa(eiaUpdateIntervalDays) + "\n" +
+		"Tracking Update Interval: " + trackingUpdateInterval + "\n" +
+		"EIA Update Interval: " + eiaUpdateIntervalDays + "\n" +
 		"________________________________________\n";
 	logText(debugInfo, nil);	
 }

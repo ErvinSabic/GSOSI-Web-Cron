@@ -5,10 +5,10 @@ import (
 	"flag"
 	"bytes"
 	"time"
-	"strconv"
+	//"strconv"
 	"os"
 	"log"
-	"errors"
+	//"errors"
     "github.com/joho/godotenv"
 )
 
@@ -24,8 +24,8 @@ var (
     erpKey                 string
     errorLog               string
     commandLog             string
-    trackingUpdateInterval int
-    eiaUpdateIntervalDays  int
+    trackingUpdateInterval string
+    eiaUpdateIntervalDays  string
     client                 = &http.Client{}
 	debugMode			   bool
 )
@@ -51,16 +51,11 @@ func init() {
 	erpKey = os.Getenv("ERP_KEY");
 	errorLog = os.Getenv("ERROR_LOG");
 	commandLog = os.Getenv("COMMAND_LOG");
-    trackingUpdateInterval, _ = strconv.Atoi(os.Getenv("TRACKING_UPDATE_INTERVAL"));
-    eiaUpdateIntervalDays, _ = strconv.Atoi(os.Getenv("EIA_UPDATE_INTERVAL_DAYS"));
+    trackingUpdateInterval = os.Getenv("TRACKING_UPDATE_INTERVAL");
+    eiaUpdateIntervalDays = os.Getenv("EIA_UPDATE_INTERVAL_DAYS");
 
 	if debugMode {
 		outputDebugInfo();
-	}
-
-	if(eiaUpdateIntervalDays > 102200 || trackingUpdateInterval > 102200){
-		logText("ERROR: EIA Update Interval or tracking update interval is too large. Please set it to a reasonable value.", errors.New("Invalid Interval"));
-		panic("ERROR: EIA Update Interval or tracking update interval is too large. Please set it to a reasonable value.");
 	}
 }
 
@@ -97,9 +92,14 @@ func triggerLocationUpdates(){
 	if(err != nil){
 		logText("There was an error gathering location updates.", err);
 	}else {
-		logText("Location updates were successful. \nNext update in "+strconv.Itoa(trackingUpdateInterval)+" minutes...", nil);
+		logText("Location updates were successful. \nNext update in "+trackingUpdateInterval+" minutes...", nil);
 		defer response.Body.Close();
-		time.AfterFunc(time.Duration(trackingUpdateInterval) * time.Minute, triggerLocationUpdates);
+		duration, tError := time.ParseDuration(trackingUpdateInterval+"m");
+		if(tError != nil){
+			logText("There was an error parsing the Tracking Update Interval. It will not run again until server reset.", tError);
+		} else {
+			time.AfterFunc(duration, triggerLocationUpdates);
+		}
 	}
 }
 
@@ -120,8 +120,13 @@ func triggerEIAFuelPrices(){
 	if(err != nil){
 		logText("There was an error gathering new fuel prices", err);
 	}else {
-		logText("Fuel Updates were successful. \nNext update in "+strconv.Itoa(eiaUpdateIntervalDays)+" days...", nil);
+		logText("Fuel Updates were successful. \nNext update in "+eiaUpdateIntervalDays+" days...", nil);
 		defer response.Body.Close();
-		time.AfterFunc((time.Duration(eiaUpdateIntervalDays)*24*time.Hour), triggerEIAFuelPrices);
+		duration, tError := time.ParseDuration(eiaUpdateIntervalDays+"h");
+		if(tError != nil){
+			logText("There was an error parsing the EIA Update Interval. It will not run again until server reset.", tError);
+		}else {
+			time.AfterFunc(duration, triggerEIAFuelPrices);
+		}
 	}
 }

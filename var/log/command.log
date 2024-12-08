@@ -121,3 +121,65 @@ ________________________________________
 
 2024/12/07 19:55:37 Attempting to process ERoad location updates....
 2024/12/07 19:55:37 Attempting to process EIA fuel market price updates....
+2024/12/08 00:37:12 Attempting to process ERoad location updates....
+2024/12/08 00:37:12 Attempting to process EIA fuel market price updates....
+2024/12/08 00:37:37 _______________________________________ 
+[33mDebug Mode Enabled
+Environment Variables Gathered from .env 
+[0m_______________________________________ 
+Server Port: 3333
+End Point: http://localhost:8000/
+ERP Key: Dwuj334Na2JMu61QBsQzj3KBd4uKuVZs-internal
+Error Log: ./var/log/error.log
+Command Log: ./var/log/command.log
+Tracking Update Interval: 5
+EIA Update Interval: 8
+________________________________________
+
+2024/12/08 00:37:37 Attempting to process ERoad location updates....
+2024/12/08 00:37:37 Attempting to process EIA fuel market price updates....
+2024/12/08 00:58:49 _______________________________________ 
+[33mDebug Mode Enabled
+Environment Variables Gathered from .env 
+[0m_______________________________________ 
+Server Port: 3333
+End Point: http://localhost:8000/
+ERP Key: Dwuj334Na2JMu61QBsQzj3KBd4uKuVZs-internal
+Error Log: ./var/log/error.log
+Command Log: ./var/log/command.log
+Tracking Update Interval: 1
+EIA Update Interval: 8
+________________________________________
+
+2024/12/08 00:58:49 Attempting to process ERoad location updates....
+2024/12/08 00:58:49 Attempting to process EIA fuel market price updates....
+2024/12/08 01:00:01 _______________________________________ 
+[33mDebug Mode Enabled
+Environment Variables Gathered from .env 
+[0m_______________________________________ 
+Server Port: 3333
+End Point: http://localhost:8000/
+ERP Key: Dwuj334Na2JMu61QBsQzj3KBd4uKuVZs-internal
+Error Log: ./var/log/error.log
+Command Log: ./var/log/command.log
+Tracking Update Interval: 1
+EIA Update Interval: 8
+________________________________________
+
+2024/12/08 01:00:01 Attempting to process ERoad location updates....
+2024/12/08 01:00:01 Attempting to process EIA fuel market price updates....
+2024/12/08 01:13:32 _______________________________________ 
+[33mDebug Mode Enabled
+Environment Variables Gathered from .env 
+[0m_______________________________________ 
+Server Port: 3333
+End Point: http://localhost:8000/
+ERP Key: Dwuj334Na2JMu61QBsQzj3KBd4uKuVZs-internal
+Error Log: ./var/log/error.log
+Command Log: ./var/log/command.log
+Tracking Update Interval: 1
+EIA Update Interval: 8
+________________________________________
+
+2024/12/08 01:13:32 Attempting to process ERoad location updates....
+2024/12/08 01:13:32 Attempting to process EIA fuel market price updates....
