@@ -2,3 +2,4 @@
 var/log/*.log
 triggers.json
 SyncServer
+GSOSI-Web-Cron
