@@ -2,7 +2,6 @@ package main
 
 import (
 	"net/http"
-    //"github.com/joho/godotenv"
 	"os"
 	"strings"
 	"bytes"
@@ -14,8 +13,8 @@ import (
 * should be handled. ENV('') can be used to pull things from the environment file and use them in the triggers.json file.
 */
 type Trigger struct {
-	Name 					string `json:"name"`		// Name of the trigger for debugging purposes and human readability.
-	Endpoint 				string `json:"endpoint"`	// The endpoint to hit for the trigger.
+	Name 					string `json:"name"`		// Name of the trigger for debugging purposes and human readability. Ex "My_Super_Cool_Trigger"
+	Endpoint 				string `json:"endpoint"`	// The endpoint to hit for the trigger. Ex "https://api.example.com"
 	Method 					string `json:"method"`		// The HTTP method we will use for this. Ex "GET", "POST", "PUT", "PATCH", "DELETE"
 	Route 					string `json:"route"`		// The route on the endpoint. Ex "/events/doSomething"
 	Duration 				string `json:"duration"`	// How often formatted for https://cs.opensource.google/go/go/+/go1.23.4:src/time/format.go;l=1617. Ex "1s", "1m", "1h", "1d"
@@ -71,7 +70,8 @@ func buildRequest(trigger Trigger) *http.Request {
 
 /**
 * @param trigger (struct) Trigger
-* @param processNow (bool) If true, we will set a timer to process the trigger and don't process it now.
+* @param processNow (bool) If false, the trigger will be scheduled to be processed and not do so immediately.
+* Process the trigger struct that was passed in.
 */
 func processTrigger(trigger Trigger, processNow bool){
 	procType := "process"

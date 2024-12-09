@@ -94,5 +94,6 @@ func main() {
 		processTrigger(trigger, warmUp);
 	}
 
+	// Stay running until the program is killed.
 	select {};
 }
