@@ -70,3 +70,8 @@ These are flags that can be passed in when launching the binary.
 |------|------|--------|-------------|
 |`--debugMode`|*Bool*|(true/false default:false)| This flag will output logs to the terminal for viewing along with the current set environment variables to ensure they are being seen by the application. |
 |`--warmUp`|*Bool*|(true/false default:true)| When set to true, this flag will cause everything within your triggers.json configuration to fire once before scheduling as configured.
+
+### Author Notes
+This is my first project I'd written in Golang outside of some practice here and there. I found it to be pretty insightful into the pros and cons of using the language and I think I'll be using it more in the future. :) 
+
+I am open to forks and issues opened on this. Constructive criticism is always welcome. Feel free to review the code.

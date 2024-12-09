@@ -12,11 +12,16 @@ import (
 
 /*******************
 * 
-	Configuration 
+*	Configuration 
 *
 ********************/
 
 
+/**
+* Initial variables for both the environment and the flags. 
+* Also went ahead and added the client and triggers since they'll
+* be used throughout the program.
+*/
 var (
     errorLog               string
     commandLog             string
@@ -24,12 +29,6 @@ var (
 	debugMode			   bool
 	warmUp				   bool
 	triggers			   []Trigger
-)
-
-const (
-	redColor    = "\033[31m"
-	yellowColor = "\033[33m"
-	resetColor  = "\033[0m"
 )
 
 func init() {
@@ -54,7 +53,8 @@ func init() {
 	*/
 	tFile, tErr := os.OpenFile("triggers.json", os.O_RDONLY, 0444);
 	if tErr != nil {
-		panic(tErr);
+		logText("There was an error opening the triggers file. Does it exist?", tErr);
+		log.Fatal(tErr);
 	}
 	defer tFile.Close();
 
@@ -86,6 +86,10 @@ func init() {
 }
 
 func main() {
+	/**
+	* Start the trigger processing loop. The triggers themselves will 
+	* handle their own intervals.
+	*/
 	for _, trigger := range triggers {
 		processTrigger(trigger, warmUp);
 	}
