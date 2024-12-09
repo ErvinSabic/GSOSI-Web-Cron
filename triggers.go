@@ -107,6 +107,11 @@ func processTrigger(trigger Trigger, processNow bool){
 		logText("There was an error parsing the duration for trigger: "+buildValue(trigger.Name), err);
 		return;
 	}
+	// Disallow triggers that are less than 1 second.
+	if(gDuration.Seconds() < 1){
+		logText("The duration for trigger: "+buildValue(trigger.Name)+" is less than 1 second. Ignoring trigger.", nil);
+		return;
+	}
 
 	time.AfterFunc(gDuration, func(){ processTrigger(trigger, false)});
 }
@@ -116,5 +121,3 @@ func validateTrigger(trigger Trigger) bool{
 	// TODO: Implement this function.
 	return true;
 }
-
-
